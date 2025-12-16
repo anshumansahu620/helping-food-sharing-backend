@@ -32,7 +32,6 @@ INSTALLED_APPS = [
 
 
     'corsheaders',
-    'maps',
     'sharing'
 ]
 
