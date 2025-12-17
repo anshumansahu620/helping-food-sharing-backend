@@ -4,7 +4,7 @@ A community-driven food sharing platform that connects people who want to share 
 
 ---
 
-## 📌 Overview
+## Overview
 
 The Food Sharing App enables users to:
 - Share excess food with nearby people
@@ -16,7 +16,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## ✨ Features
+## Features
 
 - **User Authentication**
   - Register and login
@@ -44,7 +44,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## 🔄 Application Workflow
+## Application Workflow
 
 ### 1. User Onboarding
 - User registers an account
@@ -68,7 +68,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## 🔐 Data Privacy Rules
+## Data Privacy Rules
 
 - Location is **never shared publicly**
 - Personal details are visible **only after request acceptance**
@@ -77,7 +77,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## 🏆 Karma System
+## Karma System
 
 - Users earn karma for:
   - Sharing food
@@ -87,7 +87,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## 🚀 Future Enhancements (Planned)
+## Future Enhancements (Planned)
 
 - Real-time chat between users
 - Push notifications
@@ -97,7 +97,7 @@ The platform is designed to reduce food waste and promote community support.
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 Contributions are welcome. Please:
 1. Fork the repository
@@ -107,12 +107,12 @@ Contributions are welcome. Please:
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the MIT License.
 
 ---
 
-## 📬 Contact
+## Contact
 
 For questions or collaboration, feel free to open an issue or submit a pull request.
