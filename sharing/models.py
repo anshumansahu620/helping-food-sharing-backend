@@ -1,16 +1,17 @@
 from django.db import models
-#from django.contrib.gis.db import
+from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator,MaxValueValidator
 
 import uuid
 
 
-class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class AppUser(models.Model):
+    
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
     first_name=models.CharField(max_length=100)
     last_name=models.CharField(max_length=100)
     phone=models.CharField(unique=True)
-    email=models.CharField(unique=True)
+    email=models.EmailField(unique=True)
     
 
 
@@ -18,7 +19,7 @@ class User(models.Model):
 
     
 class   HelpRequest(models.Model):
-    request_by=models.ForeignKey(User,on_delete=models.CASCADE)
+    request_by=models.ForeignKey(AppUser,on_delete=models.CASCADE)
     address=models.CharField(max_length=2000)
     pin_code=models.CharField(max_length=255)
     country=models.CharField(max_length=255)
