@@ -13,6 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
 class AppUserSerializers(serializers.ModelSerializer):
     user=UserSerializer(read_only=True)
     class Meta:
+        model=AppUser
         fields=[
             
             'user',
@@ -26,8 +27,41 @@ class AppUserSerializers(serializers.ModelSerializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    user=serializers.CharField(write_only=True)
-    first_name=serializers.CharField(write_only=True)
-    last_name=serializers.CharField(write_only=True)
+    
     phone=serializers.CharField(write_only=True)
-    email=serializers.EmailField(write_only=True)
+    
+    class Meta:
+        model=User
+        fields=[
+            "username","email","password","first_name","last_name","phone"
+        ]
+        extra_kwargs = {"password": {"write_only": True}}
+
+
+    def create(self, validated_data):
+        
+        phone = validated_data.pop("phone")
+
+        user = User.objects.create_user(
+            username=validated_data["username"],
+            email=validated_data["email"],
+            password=validated_data["password"],
+            first_name=validated_data["first_name"],
+            last_name=validated_data["last_name"],
+        )
+
+        
+       
+        AppUser.objects.create(
+            user=user,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            email=user.email,
+                
+            phone=phone,
+                
+        )
+        return user
+       
+
+     
