@@ -1,4 +1,4 @@
-from .models import AppUser
+from .models import AppUser,HelpRequest
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from datetime import timedelta
@@ -57,11 +57,28 @@ class RegisterSerializer(serializers.ModelSerializer):
             first_name=user.first_name,
             last_name=user.last_name,
             email=user.email,
-                
-            phone=phone,
-                
+            phone=phone,      
         )
         return user
-       
+    
 
+class HelpRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HelpRequest
+        fields = (
+            'request_by',
+            'address',
+            'pin_code',
+            'country',
+            'latitude',
+            'longitude',
+            'accuracy_meters',
+            'altitude_meters',
+            'created_at',
+        )
+        read_only_fields = ('request_by', 'created_at')
+
+
+   
+       
      
